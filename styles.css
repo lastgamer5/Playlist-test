@@ -1,0 +1,88 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  background-image: url('Music-background-img.jpg');
+  justify-content: center;
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #fff;
+  font-family: Arial, sans-serif;
+}
+
+.audio-player {
+  background: rgba(233, 228, 228, 0.1); /* Use a transparent white background */
+  border-radius: 10px;
+  padding: 20px 20px 15px 20px;
+  width: 600px;
+  height: 134px;
+  margin-bottom: 20px;
+  backdrop-filter: blur(10px); /* Apply a blur effect to the background */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Light border for contrast */
+}
+
+p {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.controls button {
+  background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent buttons */
+  color: #fff;
+  border: none;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.controls button:hover {
+  background-color: rgba(255, 255, 255, 0.3); /* Slightly more opaque on hover */
+}
+
+.btn {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.time-slider-container {
+  margin: 5px 0px 10px 0px;
+}
+
+.time-slider {
+  width: 82%;
+  margin: 0 10px;
+}
+
+/* Hide controls by default without changing layout */
+.controls, .time-slider-container {
+  visibility: hidden;
+  opacity: 0;
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+  margin: 40px 0px 20px 0px;
+}
+
+/* Show controls on hover */
+.audio-player:hover .controls,
+.audio-player:hover .time-slider-container {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Keep controls visible if .playing class is present */
+.audio-player.playing .controls,
+.audio-player.playing .time-slider-container {
+  visibility: visible;
+  opacity: 1;
+}
